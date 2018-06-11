@@ -1,0 +1,144 @@
+:root {
+	--offwhite: #eeeeee;
+	--easywhite: #cccccc;
+	--darkpurple: #241623;
+	--seablue: #698d91;
+	--redbrown: #af5b33;
+	--mossgreen: #264e00;
+}
+
+/* Grid CSS */
+.content-container {
+	width: 100%;
+	margin: 0xp;
+	padding: 0px;
+}
+
+
+body {
+	background-color: var(--seablue);
+	font-family:sans-serif;
+}
+
+p {
+	padding: 0px;
+	margin: 0px;
+}
+
+@viewport {
+	width: 100%;
+	zoom: 1.0;
+	user-zoom: fixed;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "nav nav nav nav nav"
+				"pjs pjs pjs pjs pjs"
+        "body body body body body"
+        "footer footer footer footer footer";
+		grid-row-gap: 0;
+		gird-column-gap: 0;
+    justify-content: center;
+}
+
+.nav {
+	grid-area: nav;
+	display: flex;
+	justify-content: center;
+  background-color: var(--darkpurple);
+	border-radius: 5px 5px 0px 0px; 
+	color: var(--easywhite); 
+}
+
+.nav ul {
+  display: block;
+  list-style-type: none;
+	margin: 0px;
+}
+
+.nav ul li {
+  display: inline-block;
+  font-size: 18pt;
+	margin: 0px;
+	margin: 0 -2px 0 -3px;
+}
+
+.nav ul li a {
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	color:inherit;
+	text-decoration: inherit;
+	display: block;
+	padding: 20px;
+}
+
+.nav ul li a:hover {
+	background-color: var(--offwhite);
+	color: black;
+	padding: 20px 30px 20px 30px;
+}
+
+#particles-js {
+	background: var(--seablue);
+	grid-area: pjs;
+	height: 175px;
+}
+
+.background-wrapper {
+	grid-area: body;
+	background-color: var(--offwhite);
+	display: flex;
+	justify-content: center;
+}
+
+.body-wrapper {
+	width: 70%;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-column-gap: 25px;
+	grid-row-gap: 15px;
+}
+
+.body-wrapper>* {
+	padding: 20px;
+}
+
+.half-half {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 25px;
+}
+
+@media screen and (max-width: 800px) {
+	.body-wrapper {
+		width: 100%;
+	}
+
+	.half-half {
+		grid-template-columns: 1fr;
+	}
+}
+
+
+h1 {
+	color: var(--redbrown);
+	font-family: monospace;
+	font-size: 22pt;
+	margin: 5px;
+	margin-left: 0px;
+}
+
+.footer {
+	grid-area: footer;
+	background-color: var(--darkpurple);
+	color: var(--easywhite);
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	border-radius: 0px 0px 5px 5px; 
+}
+
